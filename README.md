@@ -59,7 +59,7 @@ See also: https://github.com/dlecan/play2-war-plugin/wiki/Configuration
         </configuration>
 
 
-5. Created `APP_HOME`/war/WEB-INF/web.xml` added the content of:
+5. Created `APP_HOME/war/WEB-INF/web.xml` added the content of:
 https://github.com/dlecan/play2-war-plugin/blob/develop/sample/servlet25/war/WEB-INF/web.xml
  
 ----
