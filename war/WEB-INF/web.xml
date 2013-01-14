@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
-<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
         version="2.5">
   
-  <display-name>Play! a-play2war-sample-servlet25</display-name>
+  <display-name>Play! test</display-name>
   
   <listener>
       <listener-class>play.core.server.servlet25.Play2Servlet</listener-class>

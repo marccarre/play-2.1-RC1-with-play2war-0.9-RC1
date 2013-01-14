@@ -1,14 +1,16 @@
 play-2.1-RC1-with-play2war-0.9-RC1
 ==================================
 
-Sample project using Play 2.1-RC1 with play2war 0.9-RC1 for deployment on Tomcat6 under a subcontext
+Sample project using Play 2.1-RC1 with play2war 0.9-RC1 for deployment on Tomcat 6 under a sub-context
+
+
+Sources:
+- https://github.com/dlecan/play2-war-plugin/wiki/Configuration
+- https://groups.google.com/forum/?fromgroups=#!topic/play-framework/BJMcXGcRvW0 
 
 ----
-**Steps followed**:
+**Configuration**:
 
-See also: https://github.com/dlecan/play2-war-plugin/wiki/Configuration
- 
- 
 1. In `APP_HOME/project/plugins.sbt`, added:
             
         resolvers += "Play2war plugins release" at "http://repository-play-war.forge.cloudbees.com/release/"
@@ -32,7 +34,13 @@ See also: https://github.com/dlecan/play2-war-plugin/wiki/Configuration
         ).settings(Play2WarPlugin.play2WarSettings: _*)
 
 
-4. Created `APP_HOME/conf/logger.xml` and added the below:
+4. In `APP_HOME/conf/application.conf`, add at the sub-context at the of the file end:
+
+
+        application.context=/test/
+
+
+5. Created `APP_HOME/conf/logger.xml` and added the below:
 
 		<configuration>
         
@@ -57,14 +65,17 @@ See also: https://github.com/dlecan/play2-war-plugin/wiki/Configuration
           </root>
         
         </configuration>
-
-
-5. Created `APP_HOME/war/WEB-INF/web.xml` added the content of:
-https://github.com/dlecan/play2-war-plugin/blob/develop/sample/servlet25/war/WEB-INF/web.xml
  
 ----
-**Results**:
+**Deployment**:
 
-So far, just "Action not found".
+1. Run `play war`. 
 
-Follow-up on: https://groups.google.com/forum/?fromgroups=#!topic/play-framework/BJMcXGcRvW0 
+2. Rename the generated package from `test-1.0-SNAPSHOT.war` to `test.war`.
+
+3. Copy the war file to `TOMCAT6_HOME/webapps`
+
+4. Start Tomcat 6 and go to http://localhost:8080/test/ to enjoy your brand new Play 2.1 application:
+
+        Your new application is ready.
+
